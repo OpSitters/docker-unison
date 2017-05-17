@@ -11,9 +11,9 @@ COPY unison-2.48.3.tar.gz /tmp/unison/
 COPY unison-install.sh .
 RUN apt-get update -y \
  && apt-get install -y wget \
- && wget http://download.opensuse.org/repositories/home:ocaml/xUbuntu_14.04/Release.key \
+ && wget http://download.opensuse.org/repositories/home:/olav-st:/ubuntu-universe/xUbuntu_14.04//Release.key \
  && apt-key add - < Release.key \
- && sh -c "echo 'deb http://download.opensuse.org/repositories/home:/ocaml/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/ocaml.list" \
+ && sh -c "echo 'deb http://download.opensuse.org/repositories/home:/olav-st:/ubuntu-universe/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/ocaml.list" \
  && apt-get update -y \
  && apt-get install -y ocaml build-essential exuberant-ctags \
  && ./unison-install.sh \
